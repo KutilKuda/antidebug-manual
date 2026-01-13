@@ -1,0 +1,8 @@
+#ifndef _WIN64
+PPEB pPeb = (PPEB)__readfsdword(0x30);
+#else
+PPEB pPeb = (PPEB)__readgsqword(0x60);
+#endif // _WIN64
+ 
+if (pPeb->BeingDebugged)
+    goto being_debugged;
