@@ -1,0 +1,5 @@
+bool check_kuser_shared_data_structure()
+{
+    unsigned char b = *(unsigned char*)0x7ffe02d4;
+    return ((b & 0x01) || (b & 0x02));
+}
